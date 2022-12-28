@@ -22,6 +22,7 @@
 <script src="https://jsuites.net/v4/jsuites.js"></script>
 <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- Js WoW
  Js WoW-->
 <script src="js/wow.min.js"></script>
@@ -119,7 +120,7 @@
             <span class="input-group-text" id="inputGroupPrepend">@</span>
             <input type="text" class="form-control" id="Correo" name="Correo" aria-describedby="inputGroupPrepend" required>
             <div class="invalid-feedback">
-              Ingrese un Correo Electronico
+              Ingrese un Correo Electrónico
             </div>
           </div>
         </div>
@@ -183,13 +184,45 @@ registro.addEventListener("submit",function(e){
 e.preventDefault()
 event.stopPropagation()
   const form = new FormData(registro)
-  //const {ancho,alto,color,titel} = Object.fromEntries(form.entries())
+  const {Cedular,Correo} = Object.fromEntries(form.entries())
   if(Object.values(  Object.fromEntries(form.entries())).every(e=>e)){
     console.log({ ...Object.fromEntries(form.entries()) })
 registro.classList.add('was-validated')
+let emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+        if (!emailRegex.test(Correo)) {
+            return true
+        }
+$.ajax({
+    type:"POST", 
+    url:"js/regitro.php",
+    data:{...Object.fromEntries(form.entries())}, 
+    success:function(datos){ 
+      if(datos.status){
+        jSuites.notification({
+                  error: 0,
+                  name: 'Usuario registrado ',
+                  message: datos.result,
+              })
+              registro.reset();
+              registro.classList.remove('was-validated')
+        }else{
+          jSuites.notification({
+                  error: 1,
+                  name: 'Hubo un error',
+                  message: datos.result,
+              })
+        }
+     },
+     error: function (jqXHR, textStatus, errorThrown) { 
+      console.log(jqXHR, textStatus, errorThrown)
+    }
+
+  // El tipo de datos esperados del servidor. Valor predeterminado: Intelligent Guess (xml, json, script, text, html).
+})
+/*
 axios.post("js/regitro.php",{ ...Object.fromEntries(form.entries()) }).then((data) => {
     console.log(data); 
-  }).catch(error=>console.log(error))
+  }).catch(error=>console.log(error))*/
   }else{
     jSuites.notification({
                   error: 1,
