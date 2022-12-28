@@ -1,0 +1,220 @@
+<html lang="es">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+    </style>
+
+<!--Analytics-->
+
+<!--Fin Analytics-->
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximun-scalable=1.0, maximun-scalable=1.0">
+<title>Registro</title>
+<link rel="icon" href="" type="image/x-icon" />
+
+<!--CSS-->
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/fontello.css">
+<script src="https://jsuites.net/v4/jsuites.js"></script>
+<link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- Js WoW
+ Js WoW-->
+<script src="js/wow.min.js"></script>
+<script> new WOW().init();</script>
+</head>
+
+<body style="font-family: 'Quicksand', sans-serif;"><!--Inicio proyecto-->
+  <nav class="navbar navbar-expand-lg  " style="font-size: 1.1rem; background: #0e385e">
+    <div class="container-fluid ">
+      <a class="navbar-brand d-none" href="#"><img style="height: 60px;" src="img/logo/logo-meganet-blanco.png" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse"  id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+          <li class="nav-item me-4">
+            <a class="nav-link active text-white" aria-current="page" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link text-white" href="#"></a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link text-white" href="#"></a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link text-white" href=""></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-none text-white btn border border-info px-3 rounded-pill fw-bold" href="#"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="container-fluid px-0 w-100 bg-header mx-auto " style="height: 880px;" id="home">
+  <div class="container-fluid pt-4 pt-md-3 pt-lg-4 bg-transparent  position-absolute" style="z-index: 2;">
+    <div class="container py-2 ">
+   
+    </div>
+  </div>
+  <div class="d-none container-fluid w-100 position-absolute mt-n6" style="height: 880px; z-index: 0;">
+    <div class="container h-100 w-100">
+      <div class="container h-100 btn-group-vertical">
+        <p class="fw-bold text-info" style="font-size: 20px">Es el mmomento !</p>
+        <h1 style="font-size: 8.05vh;" class="text-white mt-n4"><b>Explora</b> el mundo<b class="text-info">.</b></h1>
+        <h3 style="font-size: 5.7vh;" class="text-white mt-n2">Internet por <b class="">Fibra Óptica</b></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div  class="container d-flex justify-content-center align-items-center   py-3">
+    <div class="col-12 col-md-9 border p-3 shadow rounded-3 text-center">
+     <div class="container">
+      <form id="registro" class="row g-3 needs-validation" novalidate>
+        <div class="col-md-6">
+          <label for="validationCustom01" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" name="nombre"   required>
+          <div class="invalid-feedback">
+            Ingrese su Nombre
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom02" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="apellido" name="apellido" required>
+          <div class="invalid-feedback">
+           Ingrese su Apellido
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+          <label for="validationCustom03" class="form-label">MZ</label>
+          <input type="number" class="form-control" id="manz" name="manz" required>
+          <div class="invalid-feedback">
+        Ingrese el número de MZ
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom03" class="form-label">Villa</label>
+          <input type="number" class="form-control" id="vill" name="vill" required>
+          <div class="invalid-feedback">
+           Ingrese el numero de villa
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">Celular</label>
+          <input type="number" class="form-control" id="Celular" name="Cedular" minlength="10" required>
+          <div class="invalid-feedback">
+           Ingrese un numero Celular
+          </div>
+        </div>
+        <div class="col-md-12">
+          <label for="validationCustomUsername" class="form-label">Correo</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+            <input type="text" class="form-control" id="Correo" name="Correo" aria-describedby="inputGroupPrepend" required>
+            <div class="invalid-feedback">
+              Ingrese un Correo Electronico
+            </div>
+          </div>
+        </div>
+       
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Registrar</button>
+        </div>
+      </form> 
+
+     </div>
+
+    </div>
+
+</div> 
+
+
+
+
+<!--Footer-->
+<div class="d-none container-fluid pt-3 mt-5 fixed-bottom" style="background: #0e385e" id="contacto_meganet">
+	
+		
+</div>
+<div class="d-none container-fluid py-4 fixed-bottom" style="background: #0f3353">
+	<div class="container text-center text-white">
+    <div class="col-12"> <a href="https://www.covagu.com" style="text-decoration: none" target="_blank"><span class="text-white"><b></b></span></a></div>
+	</div>	
+
+</div>
+<!--Fin Footer-->
+
+
+<!--Fin proyecto-->
+<!--Js-->
+<script src="js/bootstrap.bundle.js"></script>
+<script src="js/wow.min.js"></script>
+
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+const registro = document.getElementById("registro")
+registro.addEventListener("submit",function(e){
+
+e.preventDefault()
+event.stopPropagation()
+  const form = new FormData(registro)
+  //const {ancho,alto,color,titel} = Object.fromEntries(form.entries())
+  if(Object.values(  Object.fromEntries(form.entries())).every(e=>e)){
+    console.log({ ...Object.fromEntries(form.entries()) })
+registro.classList.add('was-validated')
+axios.post("js/regitro.php",{ ...Object.fromEntries(form.entries()) }).then((data) => {
+    console.log(data); 
+  }).catch(error=>console.log(error))
+  }else{
+    jSuites.notification({
+                  error: 1,
+                  name: 'Hubo un error',
+                  message: "",
+              })
+registro.classList.add('was-validated')
+  }
+console.log(Object.values(  Object.fromEntries(form.entries())).every(e=>e))
+})
+
+async function postData(url = '', data = {}) {
+  try {
+    const response = await fetch(url, {
+    method: 'POST', 
+    body: JSON.stringify(data) 
+  });
+  console.log(response)
+  return response
+  } catch (error) {
+    return error
+  }
+  
+}
+</script>
+
+</body>
+</html>
