@@ -49,7 +49,7 @@
           </li>
 
           <li class="nav-item me-4">
-            <a class="nav-link text-white" href="./auth">entrar</a>
+            <a class="nav-link text-white" href="./auth">Entrar</a>
           </li>
           <li class="nav-item">
             <a class="nav-link d-none text-white btn border border-info px-3 rounded-pill fw-bold" href="#"></a>
@@ -58,7 +58,7 @@
       </div>
     </div>
   </nav>
-  <div class="container-fluid px-0 w-100 bg-header mx-auto " style="height: 880px;" id="home">
+  <div class="container-fluid px-0 w-100 bg-header mx-auto d-none d-md-block d-xl-block " style="height: 880px;" id="home">
     <div class="container-fluid pt-4 pt-md-3 pt-lg-4 bg-transparent  position-absolute" style="z-index: 2;">
       <div class="container py-2 ">
 
@@ -94,14 +94,14 @@
             </div>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-6 col-md-3">
             <label for="validationCustom03" class="form-label">MZ</label>
             <input type="number" class="form-control" id="manz" name="manz" required>
             <div class="invalid-feedback">
               Ingrese el número de MZ
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-6 col-md-3">
             <label for="validationCustom03" class="form-label">Villa</label>
             <input type="number" class="form-control" id="vill" name="vill" required>
             <div class="invalid-feedback">
@@ -227,8 +227,12 @@
               })
             }
           },
-          error: function (jqXHR, textStatus, errorThrown) {
-            console.log(jqXHR, textStatus, errorThrown)
+          error: function (error) {
+            jSuites.notification({
+                error: 1,
+                name: 'Hubo un error',
+                message: "Verifique su conexión o intente mas tarde",
+              })
           }
         })
       } else {

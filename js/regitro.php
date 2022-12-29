@@ -17,6 +17,14 @@ $data = array();
         echo json_encode($data);
     }
     else{
+        $query = $connection->prepare("SELECT * FROM usurarios WHERE Correo=:Correo");
+        $query->bindParam("Correo", $Correo, PDO::PARAM_STR);
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            $data['status'] = false;
+            $data['result'] = "El correo ya esta registrado";
+            echo json_encode($data);
+        }else{
     $query = $connection->prepare("INSERT INTO usurarios(Nombre,Apellido,MZ,Villas,Celular,Correo) VALUES (:nombre,:apellido,:manz,:vill,:Cedular,:Correo)");
         $query->bindParam("nombre", $nombre, PDO::PARAM_STR);
         $query->bindParam("apellido", $apellido, PDO::PARAM_STR);
@@ -35,7 +43,7 @@ $data = array();
             $data['result'] =  "No se completo el registro";
          
             echo json_encode($data);
-        }
+        }}
 }
 
 ?>
