@@ -26,7 +26,7 @@ class Conect_MySql
     function login($usuario)
     {
         $replaus = str_replace("'", "\'", $usuario);
-        $res = $this->execute("SELECT * FROM cousuario WHERE  u_email='" . $replaus . "' and u_estado = 1");
+        $res = $this->execute("SELECT * FROM user WHERE  Nombre='" . $replaus . "'");
         return $res;
     }
     public function fetch_row($id = "")
