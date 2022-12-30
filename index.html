@@ -15,6 +15,11 @@
     content="width=device-width, initial-scale=1.0, user-scalable=no, maximun-scalable=1.0, maximun-scalable=1.0">
   <title>Registro</title>
   <link rel="icon" href="" type="image/x-icon" />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
   <!--CSS-->
   <link rel="stylesheet" href="css/styles.css">
@@ -58,7 +63,8 @@
       </div>
     </div>
   </nav>
-  <div class="container-fluid px-0 w-100 bg-header mx-auto d-none d-md-block d-xl-block " style="height: 880px;" id="home">
+  <div class="container-fluid px-0 w-100 bg-header mx-auto d-none d-md-block d-xl-block " style="height: 880px;"
+    id="home">
     <div class="container-fluid pt-4 pt-md-3 pt-lg-4 bg-transparent  position-absolute" style="z-index: 2;">
       <div class="container py-2 ">
 
@@ -93,39 +99,48 @@
               Ingrese su Apellido
             </div>
           </div>
-
-          <div class="col-6 col-md-3">
-            <label for="validationCustom03" class="form-label">MZ</label>
-            <input type="number" class="form-control" id="manz" name="manz" required>
-            <div class="invalid-feedback">
-              Ingrese el número de MZ
-            </div>
-          </div>
-          <div class="col-6 col-md-3">
-            <label for="validationCustom03" class="form-label">Villa</label>
-            <input type="number" class="form-control" id="vill" name="vill" required>
-            <div class="invalid-feedback">
-              Ingrese el numero de villa
-            </div>
-          </div>
-          <div class="col-md-6">
-            <label for="validationCustom03" class="form-label">Celular</label>
-            <input type="number" class="form-control" id="Celular" name="Cedular" minlength="10" required>
-            <div class="invalid-feedback">
-              Ingrese un numero Celular
-            </div>
-          </div>
-          <div class="col-md-12">
-            <label for="validationCustomUsername" class="form-label">Correo</label>
-            <div class="input-group has-validation">
-              <span class="input-group-text" id="inputGroupPrepend">@</span>
-              <input type="text" class="form-control" id="Correo" name="Correo" aria-describedby="inputGroupPrepend"
-                required>
+          <div class="row ">
+            <div class="col-4">
+              <label for="validationCustom03" class="form-label">MZ</label>
+              <input type="number" class="form-control" id="manz" name="manz" required>
               <div class="invalid-feedback">
-                Ingrese un Correo Electrónico
+                Ingrese el número de MZ
+              </div>
+            </div>
+            <div class="col-4">
+              <label for="validationCustom03" class="form-label">Villa</label>
+              <input type="number" class="form-control" id="vill" name="vill" required>
+              <div class="invalid-feedback">
+                Ingrese el numero de villa
               </div>
             </div>
           </div>
+
+          <div class="row">
+            
+            <div class="col-md-12">
+              <label for="validationCustom03" class="form-label">Celular</label>
+              <input type="number" class="form-control" id="Celular" name="Cedular" minlength="10" required>
+              <div class="invalid-feedback">
+                Ingrese un numero Celular
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <label for="validationCustomUsername" class="form-label">Correo</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                <input type="text" class="form-control" id="Correo" name="Correo" aria-describedby="inputGroupPrepend"
+                  required>
+                <div class="invalid-feedback">
+                  Ingrese un Correo Electrónico
+                </div>
+              </div>
+            </div>
+          </div>
+         
 
           <div class="col-12">
             <button class="btn btn-primary" type="submit">Registrar</button>
@@ -198,7 +213,7 @@
           })
           return
         }
-        if (Cedular.length < 9 && Cedular.length>10) {
+        if (Cedular.length < 9 && Cedular.length > 10) {
           jSuites.notification({
             error: 1,
             name: 'Error ',
@@ -229,20 +244,20 @@
           },
           error: function (error) {
             jSuites.notification({
-                error: 1,
-                name: 'Hubo un error',
-                message: "Verifique su conexión o intente mas tarde",
-              })
+              error: 1,
+              name: 'Hubo un error',
+              message: "Verifique su conexión o intente mas tarde",
+            })
           }
         })
       } else {
 
         registro.classList.add('was-validated')
       }
-     // console.log(Object.values(Object.fromEntries(form.entries())).every(e => e))
+      // console.log(Object.values(Object.fromEntries(form.entries())).every(e => e))
     })
 
-    
+
   </script>
 
 </body>
